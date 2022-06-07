@@ -550,6 +550,7 @@ main .container .right .messages .message .profile-picture .active {
   padding: 3rem;
   border-radius: var(--card-border-radius);
   width: 50%;
+  box-shadow: 0 0 1rem var(--color-primary);
 }
 
 /* ------------------------- FONT SIZE ------------------------- */
@@ -708,6 +709,10 @@ main .container .right .messages .message .profile-picture .active {
   .left .btn {
     display: none;
   }
+
+  .customize-theme .card {
+    width: 84vw;
+  }
 }
 
 /* ------------------------- MEDIA QUERIES FOR SMALL TABLETS & PHONE ------------------------- */
@@ -748,5 +753,8 @@ main .container .right .messages .message .profile-picture .active {
   }
   main .container .right {
     display: none;
+  }
+  .customize-theme .card {
+    width: 80vw;
   }
 }
