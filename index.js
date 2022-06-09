@@ -16,6 +16,9 @@ const themeModal = document.querySelector(".customize-theme");
 const fontSizes = document.querySelectorAll(".choose-size span");
 const root = document.querySelector(":root");
 const colorPalete = document.querySelectorAll(".choose-color span");
+const Bg1 = document.querySelector(".bg-1");
+const Bg2 = document.querySelector(".bg-2");
+const Bg3 = document.querySelector(".bg-3");
 
 // REMOVE ACTICE CLASS FROM ALL MENU-ITEM
 const changeActiceItem = () => {
@@ -147,3 +150,59 @@ colorPalete.forEach((color) => {
     root.style.setProperty("--primary-color-hue", primaryHue);
   });
 });
+
+// THEME BACKGROUND VALUE
+let lightColorLightness;
+let darkColorLightness;
+let whiteColorLightness;
+
+// CHANGE BACKGROUND COLOR
+const changeBG = () => {
+  root.style.setProperty("--light-color-lightness", lightColorLightness);
+  root.style.setProperty("--dark-color-lightness", darkColorLightness);
+  root.style.setProperty("--white-color-lightness", whiteColorLightness);
+};
+
+// CHANGE Background 1
+Bg1.addEventListener("click", () => {
+  // ACTIVE CLASS
+  Bg1.classList.add("active");
+
+  // remove activeclass from others
+  Bg2.classList.remove("active");
+  Bg3.classList.remove("active");
+  changeBG();
+  // Reload page
+  window.location.reload();
+});
+// CHANGE Background 2
+Bg2.addEventListener("click", () => {
+  darkColorLightness = "95%";
+  whiteColorLightness = "20%";
+  lightColorLightness = "15%";
+
+  // ACTIVE CLASS
+  Bg2.classList.add("active");
+
+  // remove activeclass from others
+  Bg1.classList.remove("active");
+  Bg3.classList.remove("active");
+  changeBG();
+});
+
+// CHANGE Background 3
+Bg3.addEventListener("click", () => {
+  darkColorLightness = "95%";
+  whiteColorLightness = "10%";
+  lightColorLightness = "0%";
+
+  // ACTIVE CLASS
+  Bg3.classList.add("active");
+
+  // remove activeclass from others
+  Bg1.classList.remove("active");
+  Bg2.classList.remove("active");
+  changeBG();
+});
+
+// END
